@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CORTIS | Color Outside The Lines</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#101410;color:#f4f1e8;font-family:Arial,sans-serif;line-height:1.6}
+header{padding:22px 7%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #343b32;position:sticky;top:0;background:#101410;z-index:5}
+.logo{font-size:25px;font-weight:900;letter-spacing:4px}
+.logo span{color:#d8ff55}
+nav a{color:white;text-decoration:none;margin-left:20px;font-size:13px}
+nav a:hover{color:#d8ff55}
+.hero{min-height:620px;padding:110px 8%;display:flex;flex-direction:column;justify-content:center;background:radial-gradient(circle at 85% 30%,#394329 0%,#101410 50%)}
+.tag{color:#d8ff55;letter-spacing:4px;font-size:12px;font-weight:bold}
+h1{font-size:clamp(65px,13vw,125px);line-height:.92;letter-spacing:-7px;margin:30px 0}
+h1 span{color:#d8ff55}
+.hero p{max-width:500px;color:#b8bdb3;font-size:18px}
+.btn{display:inline-block;margin-top:30px;padding:14px 24px;background:#d8ff55;color:#111;text-decoration:none;font-weight:bold;width:fit-content}
+section{padding:90px 8%;border-top:1px solid #343b32}
+.number{color:#d8ff55;font-size:12px;letter-spacing:3px}
+h2{font-size:clamp(38px,7vw,65px);line-height:1.1;margin:15px 0 35px}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:45px}
+.about p{color:#c3c8bf;font-size:17px;margin-bottom:20px}
+.facts{background:#1c241c;padding:28px}
+.fact{padding:15px 0;border-bottom:1px solid #41493c;display:flex;justify-content:space-between;gap:15px}
+.fact span:first-child{color:#aeb5a9}
+.members{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.member{background:#1c241c;padding:20px;min-height:170px;display:flex;flex-direction:column;justify-content:space-between;border:1px solid #343b32}
+.member strong{font-size:25px}
+.member .initial{font-size:55px;color:#d8ff55;font-weight:900}
+.music{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.track{background:#1c241c;padding:25px;min-height:180px;border:1px solid #343b32}
+.track small{color:#d8ff55}
+.track h3{font-size:25px;margin:25px 0 8px}
+.track p{color:#b8bdb3}
+.track a{color:#d8ff55;display:inline-block;margin-top:15px}
+.contact{background:#d8ff55;color:#111;padding:55px 8%}
+.contact h2{margin-bottom:15px}
+.contact a{display:inline-block;margin-top:20px;background:#111;color:white;padding:13px 20px;text-decoration:none}
+footer{padding:30px 8%;color:#92998e;font-size:12px}
+@media(max-width:650px){
+header{padding:18px 5%;flex-wrap:wrap;gap:15px}
+nav{width:100%;display:flex;justify-content:space-between}
+nav a{margin:0;font-size:11px}
+.hero{min-height:570px;padding:80px 7%}
+h1{letter-spacing:-4px}
+section{padding:70px 7%}
+.about{grid-template-columns:1fr}
+.members{grid-template-columns:repeat(2,1fr)}
+.music{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">COR<span>T</span>IS.</div>
+<nav>
+<a href="#home">HOME</a>
+<a href="#about">ABOUT</a>
+<a href="#members">MEMBERS</a>
+<a href="#music">MUSIC</a>
+<a href="#contact">LINKS</a>
+</nav>
+</header>
+
+<main>
+<div class="hero" id="home">
+<div class="tag">BIGHIT MUSIC · FIVE MEMBER CREW</div>
+<h1>COLOR<br>OUTSIDE<br><span>THE LINES.</span></h1>
+<p>Discover CORTIS — a creative group bringing fresh ideas to music, performance and visual storytelling.</p>
+<a class="btn" href="#about">DISCOVER CORTIS ↓</a>
+</div>
+
+<section id="about">
+<div class="number">01 / ABOUT THE GROUP</div>
+<h2>Think beyond<br>the limits.</h2>
+<div class="about">
+<div>
+<p>CORTIS is a five-member group from BIGHIT MUSIC.</p>
+<p>The name CORTIS comes from six letters selected from the phrase "COLOR OUTSIDE THE LINES".</p>
+<p>It represents freedom, originality and the courage to think differently.</p>
+</div>
+<div class="facts">
+<div class="fact"><span>Agency</span><strong>BIGHIT MUSIC</strong></div>
+<div class="fact"><span>Members</span><strong>5</strong></div>
+<div class="fact"><span>Debut</span><strong>August 2025</strong></div>
+<div class="fact"><span>Identity</span><strong>Creative crew</strong></div>
+</div>
+</div>
+</section>
+
+<section id="members">
+<div class="number">02 / THE MEMBERS</div>
+<h2>Meet the crew.</h2>
+<div class="members">
+<div class="member"><div class="initial">M</div><strong>MARTIN</strong></div>
+<div class="member"><div class="initial">J</div><strong>JAMES</strong></div>
+<div class="member"><div class="initial">J</div><strong>JUHOON</strong></div>
+<div class="member"><div class="initial">S</div><strong>SEONGHYEON</strong></div>
+<div class="member"><div class="initial">K</div><strong>KEONHO</strong></div>
+</div>
+</section>
+
+<section id="music">
+<div class="number">03 / THEIR MUSIC</div>
+<h2>Listen to CORTIS.</h2>
+<div class="music">
+<div class="track"><small>TRACK 01</small><h3>GO!</h3><p>A powerful introduction to the group.</p><a href="https://www.youtube.com/results?search_query=CORTIS+GO+official">Listen ↗</a></div>
+<div class="track"><small>TRACK 02</small><h3>What You Want</h3><p>The title track from their debut EP.</p><a href="https://www.youtube.com/results?search_query=CORTIS+What+You+Want">Listen ↗</a></div>
+<div class="track"><small>TRACK 03</small><h3>FaSHioN</h3><p>A track from their debut EP.</p><a href="https://www.youtube.com/results?search_query=CORTIS+FaSHioN">Listen ↗</a></div>
+</div>
+</section>
+
+<div class="contact" id="contact">
+<div class="number" style="color:#34420d">04 / OFFICIAL LINKS</div>
+<h2>Stay connected.</h2>
+<p>Explore the official CORTIS profile and discover more about the group.</p>
+<a href="https://ibighit.com/en/cortis/profile/" target="_blank">OFFICIAL PROFILE ↗</a>
+</div>
+</main>
+
+<footer>
+<p>CORTIS FAN WEBSITE · STUDENT PROJECT · 2026</p>
+<p>Information: BIGHIT MUSIC official website.</p>
+</footer>
+</body>
+</html>
