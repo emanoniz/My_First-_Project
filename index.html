@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CORTIS — Color Outside The Lines</title>
+<title>CORTIS | Color Outside The Lines</title>
 
 <style>
 :root {
@@ -17,9 +17,9 @@
 }
 
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 html {
@@ -234,6 +234,8 @@ h2 {
   margin-top: 7px;
 }
 
+/* MEMBERS */
+
 .member-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -247,6 +249,7 @@ h2 {
   padding: 25px;
   cursor: pointer;
   transition: .3s;
+  align-self: start;
 }
 
 .member:hover {
@@ -303,12 +306,44 @@ h2 {
   font-size: 14px;
 }
 
+.member-photo {
+  width: 100%;
+  height: 370px;
+  object-fit: cover;
+  object-position: center 25%;
+  display: block;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  background: #292b25;
+}
+
+.member[open] .member-photo {
+  animation: photoAppear .4s ease;
+}
+
+@keyframes photoAppear {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .member-info p {
   margin-bottom: 10px;
 }
 
 .member-info strong {
   color: var(--text);
+}
+
+.photo-credit {
+  font-size: 11px;
+  color: #85897c;
+  margin-top: 12px;
 }
 
 .music-grid {
@@ -446,6 +481,10 @@ footer p {
 
   .member h3 {
     font-size: 24px;
+  }
+
+  .member-photo {
+    height: 390px;
   }
 }
 </style>
@@ -617,10 +656,13 @@ footer p {
 
   <p class="intro-text">
     Get to know the five members of CORTIS.
-    Tap on each name to discover more information.
+    Tap on each name to discover their official photo
+    and personal information.
   </p>
 
   <div class="member-grid">
+
+    <!-- MARTIN -->
 
     <details class="member">
       <summary>
@@ -633,14 +675,27 @@ footer p {
       </summary>
 
       <div class="member-info">
+        <img
+          class="member-photo"
+          src="https://pbs.twimg.com/media/GyPXe47bkAE9BDS.jpg"
+          alt="MARTIN from CORTIS"
+          loading="lazy">
+
         <p><strong>Birthday:</strong> March 20, 2008</p>
         <p><strong>Group role:</strong> Leader</p>
+
         <p>
           Martin is the leader of CORTIS. He is also part of
           the group's collaborative creative work.
         </p>
+
+        <p class="photo-credit">
+          Photo source: BIGHIT MUSIC official social media.
+        </p>
       </div>
     </details>
+
+    <!-- JAMES -->
 
     <details class="member">
       <summary>
@@ -653,14 +708,27 @@ footer p {
       </summary>
 
       <div class="member-info">
+        <img
+          class="member-photo"
+          src="https://image.weversejapan.com/official/live/cortis/contents/profile/3/b2ca881e3d23437784122cdd57474612.jpg"
+          alt="JAMES from CORTIS"
+          loading="lazy">
+
         <p><strong>Birthday:</strong> October 14, 2005</p>
         <p><strong>Group role:</strong> Member</p>
+
         <p>
           James is one of the five members of CORTIS.
           He participates in the group's shared artistic work.
         </p>
+
+        <p class="photo-credit">
+          Photo source: CORTIS Japan official profile.
+        </p>
       </div>
     </details>
+
+    <!-- JUHOON -->
 
     <details class="member">
       <summary>
@@ -673,14 +741,27 @@ footer p {
       </summary>
 
       <div class="member-info">
+        <img
+          class="member-photo"
+          src="https://cdn.shopify.com/s/files/1/0560/8121/9673/files/7._JUHOON_1.jpg?v=1763454888"
+          alt="JUHOON from CORTIS"
+          loading="lazy">
+
         <p><strong>Birthday:</strong> January 3, 2008</p>
         <p><strong>Group role:</strong> Member</p>
+
         <p>
           Juhoon is part of CORTIS and contributes to the
           group's collaborative creative identity.
         </p>
+
+        <p class="photo-credit">
+          Photo source: K-POP Kobunsha interview feature.
+        </p>
       </div>
     </details>
+
+    <!-- SEONGHYEON -->
 
     <details class="member">
       <summary>
@@ -693,14 +774,27 @@ footer p {
       </summary>
 
       <div class="member-info">
+        <img
+          class="member-photo"
+          src="https://ibighit.com/public%2FcontentArtistMemberImage%2F2026-01-15_715_04%2520CORTIS_seonghyeon.jpg"
+          alt="SEONGHYEON from CORTIS"
+          loading="lazy">
+
         <p><strong>Birthday:</strong> January 13, 2009</p>
         <p><strong>Group role:</strong> Member</p>
+
         <p>
           Seonghyeon is one of the five members and takes
           part in the group's creative activities.
         </p>
+
+        <p class="photo-credit">
+          Photo source: BIGHIT MUSIC official artist profile.
+        </p>
       </div>
     </details>
+
+    <!-- KEONHO -->
 
     <details class="member">
       <summary>
@@ -713,11 +807,22 @@ footer p {
       </summary>
 
       <div class="member-info">
+        <img
+          class="member-photo"
+          src="https://image.weversejapan.com/official/live/cortis/contents/profile/3/7b4d76643163474cb573714bc0042073.jpg"
+          alt="KEONHO from CORTIS"
+          loading="lazy">
+
         <p><strong>Birthday:</strong> February 14, 2009</p>
         <p><strong>Group role:</strong> Member</p>
+
         <p>
           Keonho is the youngest member of CORTIS.
           He is part of the group's shared creative work.
+        </p>
+
+        <p class="photo-credit">
+          Photo source: CORTIS Japan official profile.
         </p>
       </div>
     </details>
@@ -725,10 +830,10 @@ footer p {
   </div>
 
   <p class="note">
-    Note: Birth dates and the leader information are based on
-    official artist profile and community information.
-    The group does not use fixed individual creative positions
-    in its official introduction.
+    Member information and birth dates are based on the
+    official BIGHIT MUSIC artist profile.
+    The group works collaboratively rather than following
+    fixed individual creative positions.
   </p>
 
   <a class="button"
@@ -785,7 +890,7 @@ footer p {
         An official music video from their first EP.
       </p>
       <a class="music-link"
-         href="https://www.youtube.com/watch?v=42wfEs7oIP8"
+         href="https://www.youtube.com/@cortis_bighit"
          target="_blank">
          WATCH OFFICIAL VIDEO ↗
       </a>
@@ -837,10 +942,12 @@ footer p {
 
     <p>
       <strong>Photography</strong><br>
-      The group photograph displayed on this website is sourced
-      from CORTIS media on Weverse. The photograph is not owned
-      by the website creator. Copyright and usage rights remain
-      with the respective photographer and rights holders.
+      Member photographs are displayed from official artist
+      and media sources, including BIGHIT MUSIC, CORTIS Japan
+      and a published interview feature.
+      The photographs are not owned by the website creator.
+      Copyright and usage rights remain with their respective
+      photographers and rights holders.
     </p>
 
     <p>
@@ -853,6 +960,7 @@ footer p {
 
     <p>
       <strong>Credits and sources</strong><br>
+
       Official artist profile:
       <a href="https://ibighit.com/en/cortis/profile/"
          target="_blank">BIGHIT MUSIC</a>
@@ -863,14 +971,19 @@ footer p {
          target="_blank">CORTIS Discography</a>
       <br>
 
+      Official Japanese profile:
+      <a href="https://cortis-official.jp/profile"
+         target="_blank">CORTIS Japan</a>
+      <br>
+
       Official community:
       <a href="https://weverse.io/cortis"
          target="_blank">CORTIS on Weverse</a>
       <br>
 
-      Group photograph:
-      <a href="https://weverse.io/cortis/media"
-         target="_blank">CORTIS Media on Weverse</a>
+      Juhoon photo feature:
+      <a href="https://member.k-kobunsha.jp/blogs/pick-up/cortis-interview"
+         target="_blank">K-POP Kobunsha</a>
     </p>
 
     <p>
