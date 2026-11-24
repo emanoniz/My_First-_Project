@@ -4,128 +4,903 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CORTIS | Color Outside The Lines</title>
+<title>CORTIS — Color Outside The Lines</title>
+
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:#101410;color:#f4f1e8;font-family:Arial,sans-serif;line-height:1.6}
-header{padding:22px 7%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #343b32;position:sticky;top:0;background:#101410;z-index:5}
-.logo{font-size:25px;font-weight:900;letter-spacing:4px}
-.logo span{color:#d8ff55}
-nav a{color:white;text-decoration:none;margin-left:20px;font-size:13px}
-nav a:hover{color:#d8ff55}
-.hero{min-height:620px;padding:110px 8%;display:flex;flex-direction:column;justify-content:center;background:radial-gradient(circle at 85% 30%,#394329 0%,#101410 50%)}
-.tag{color:#d8ff55;letter-spacing:4px;font-size:12px;font-weight:bold}
-h1{font-size:clamp(65px,13vw,125px);line-height:.92;letter-spacing:-7px;margin:30px 0}
-h1 span{color:#d8ff55}
-.hero p{max-width:500px;color:#b8bdb3;font-size:18px}
-.btn{display:inline-block;margin-top:30px;padding:14px 24px;background:#d8ff55;color:#111;text-decoration:none;font-weight:bold;width:fit-content}
-section{padding:90px 8%;border-top:1px solid #343b32}
-.number{color:#d8ff55;font-size:12px;letter-spacing:3px}
-h2{font-size:clamp(38px,7vw,65px);line-height:1.1;margin:15px 0 35px}
-.about{display:grid;grid-template-columns:1fr 1fr;gap:45px}
-.about p{color:#c3c8bf;font-size:17px;margin-bottom:20px}
-.facts{background:#1c241c;padding:28px}
-.fact{padding:15px 0;border-bottom:1px solid #41493c;display:flex;justify-content:space-between;gap:15px}
-.fact span:first-child{color:#aeb5a9}
-.members{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
-.member{background:#1c241c;padding:20px;min-height:170px;display:flex;flex-direction:column;justify-content:space-between;border:1px solid #343b32}
-.member strong{font-size:25px}
-.member .initial{font-size:55px;color:#d8ff55;font-weight:900}
-.music{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
-.track{background:#1c241c;padding:25px;min-height:180px;border:1px solid #343b32}
-.track small{color:#d8ff55}
-.track h3{font-size:25px;margin:25px 0 8px}
-.track p{color:#b8bdb3}
-.track a{color:#d8ff55;display:inline-block;margin-top:15px}
-.contact{background:#d8ff55;color:#111;padding:55px 8%}
-.contact h2{margin-bottom:15px}
-.contact a{display:inline-block;margin-top:20px;background:#111;color:white;padding:13px 20px;text-decoration:none}
-footer{padding:30px 8%;color:#92998e;font-size:12px}
-@media(max-width:650px){
-header{padding:18px 5%;flex-wrap:wrap;gap:15px}
-nav{width:100%;display:flex;justify-content:space-between}
-nav a{margin:0;font-size:11px}
-.hero{min-height:570px;padding:80px 7%}
-h1{letter-spacing:-4px}
-section{padding:70px 7%}
-.about{grid-template-columns:1fr}
-.members{grid-template-columns:repeat(2,1fr)}
-.music{grid-template-columns:1fr}
+:root {
+  --bg: #10110f;
+  --card: #1b1d19;
+  --text: #f5f4ec;
+  --muted: #a5a89d;
+  --lime: #d8ff55;
+  --line: #34372f;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(16,17,15,.94);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+  padding: 18px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo {
+  font-size: 25px;
+  font-weight: 900;
+  letter-spacing: 3px;
+}
+
+.logo span {
+  color: var(--lime);
+}
+
+nav {
+  display: flex;
+  gap: 23px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  font-size: 12px;
+  color: var(--muted);
+  transition: .3s;
+}
+
+nav a:hover {
+  color: var(--lime);
+}
+
+.hero {
+  min-height: 620px;
+  padding: 80px 8%;
+  display: flex;
+  align-items: center;
+  background:
+    linear-gradient(90deg, rgba(16,17,15,.96), rgba(16,17,15,.5)),
+    url("https://phinf.wevpstatic.net/MjAyNjA1MDRfOTMg/MDAxNzc3ODg1MTk4NTY4.12LKQrhHuPlowEdYnQXGmq6Fve-7WbBUujfGiLqV1Isg.oC79J2tQm0LDOos3yQXGWev_aSWkSF_9FC0ktnODJCog.JPEG/5a497bd5-e8a9-481e-b78b-9d5a5aeb3be7.jpeg")
+    center/cover no-repeat;
+}
+
+.hero-content {
+  max-width: 650px;
+}
+
+.tag {
+  color: var(--lime);
+  font-size: 12px;
+  letter-spacing: 4px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: clamp(65px, 13vw, 125px);
+  line-height: .92;
+  letter-spacing: -7px;
+  margin: 25px 0;
+}
+
+h1 span {
+  color: var(--lime);
+}
+
+.hero p {
+  max-width: 480px;
+  color: #c1c3b9;
+  font-size: 17px;
+}
+
+.button {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 13px 23px;
+  background: var(--lime);
+  color: #10110f;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border-radius: 3px;
+  transition: .3s;
+}
+
+.button:hover {
+  background: white;
+  transform: translateY(-3px);
+}
+
+section {
+  padding: 90px 8%;
+  border-top: 1px solid var(--line);
+}
+
+.section-label {
+  color: var(--lime);
+  font-size: 11px;
+  letter-spacing: 4px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: clamp(35px, 7vw, 65px);
+  line-height: 1.05;
+  margin-bottom: 30px;
+  letter-spacing: -2px;
+}
+
+.intro-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 50px;
+  align-items: start;
+}
+
+.intro-text {
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+.highlight {
+  color: var(--lime);
+}
+
+.fact-box {
+  background: var(--card);
+  padding: 30px;
+  border: 1px solid var(--line);
+}
+
+.fact-box div {
+  padding: 15px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.fact-box div:last-child {
+  border: none;
+}
+
+.fact-box small {
+  display: block;
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: 2px;
+  margin-bottom: 5px;
+}
+
+.fact-box strong {
+  font-size: 16px;
+}
+
+.timeline {
+  border-left: 1px solid var(--lime);
+  margin: 35px 0 0 8px;
+  padding-left: 30px;
+}
+
+.timeline-item {
+  position: relative;
+  padding: 0 0 38px;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: var(--lime);
+  border-radius: 50%;
+  left: -36px;
+  top: 7px;
+}
+
+.timeline-date {
+  color: var(--lime);
+  font-size: 12px;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.timeline-item p {
+  color: var(--muted);
+  margin-top: 7px;
+}
+
+.member-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-top: 35px;
+}
+
+.member {
+  background: var(--card);
+  border: 1px solid var(--line);
+  padding: 25px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.member:hover {
+  border-color: var(--lime);
+  transform: translateY(-3px);
+}
+
+.member summary {
+  list-style: none;
+}
+
+.member summary::-webkit-details-marker {
+  display: none;
+}
+
+.member-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.member-number {
+  color: var(--lime);
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.member h3 {
+  font-size: 27px;
+  margin: 10px 0 3px;
+}
+
+.member-subtitle {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.plus {
+  color: var(--lime);
+  font-size: 25px;
+  transition: .3s;
+}
+
+.member[open] .plus {
+  transform: rotate(45deg);
+}
+
+.member-info {
+  border-top: 1px solid var(--line);
+  margin-top: 20px;
+  padding-top: 18px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.member-info p {
+  margin-bottom: 10px;
+}
+
+.member-info strong {
+  color: var(--text);
+}
+
+.music-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.music-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  padding: 25px;
+  transition: .3s;
+}
+
+.music-card:hover {
+  border-color: var(--lime);
+}
+
+.music-card .number {
+  color: var(--lime);
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.music-card h3 {
+  font-size: 22px;
+  margin: 12px 0;
+}
+
+.music-card p {
+  color: var(--muted);
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+.music-link {
+  color: var(--lime);
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.note {
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 25px;
+}
+
+.credits {
+  background: var(--card);
+  border: 1px solid var(--line);
+  padding: 30px;
+  margin-top: 25px;
+}
+
+.credits p {
+  color: var(--muted);
+  font-size: 14px;
+  margin: 12px 0;
+}
+
+.credits strong {
+  color: var(--text);
+}
+
+.credits a {
+  color: var(--lime);
+  text-decoration: underline;
+}
+
+footer {
+  padding: 45px 8%;
+  text-align: center;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+  font-size: 12px;
+}
+
+.footer-logo {
+  color: var(--text);
+  font-size: 30px;
+  font-weight: 900;
+  letter-spacing: 4px;
+  margin-bottom: 15px;
+}
+
+.footer-logo span {
+  color: var(--lime);
+}
+
+footer p {
+  margin: 7px 0;
+}
+
+@media (max-width: 700px) {
+  header {
+    padding: 15px 5%;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  nav {
+    gap: 15px;
+  }
+
+  nav a {
+    font-size: 11px;
+  }
+
+  .hero {
+    min-height: 570px;
+    padding: 65px 7%;
+    background-position: center;
+  }
+
+  h1 {
+    letter-spacing: -4px;
+  }
+
+  section {
+    padding: 65px 7%;
+  }
+
+  .intro-grid,
+  .member-grid,
+  .music-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .intro-grid {
+    gap: 30px;
+  }
+
+  .member h3 {
+    font-size: 24px;
+  }
 }
 </style>
 </head>
+
 <body>
+
 <header>
-<div class="logo">COR<span>T</span>IS.</div>
-<nav>
-<a href="#home">HOME</a>
-<a href="#about">ABOUT</a>
-<a href="#members">MEMBERS</a>
-<a href="#music">MUSIC</a>
-<a href="#contact">LINKS</a>
-</nav>
+  <a href="#home" class="logo">COR<span>TIS</span></a>
+
+  <nav>
+    <a href="#about">ABOUT</a>
+    <a href="#history">HISTORY</a>
+    <a href="#members">MEMBERS</a>
+    <a href="#music">MUSIC</a>
+    <a href="#credits">CREDITS</a>
+  </nav>
 </header>
 
 <main>
+
+<!-- HOME -->
+
 <div class="hero" id="home">
-<div class="tag">BIGHIT MUSIC · FIVE MEMBER CREW</div>
-<h1>COLOR<br>OUTSIDE<br><span>THE LINES.</span></h1>
-<p>Discover CORTIS — a creative group bringing fresh ideas to music, performance and visual storytelling.</p>
-<a class="btn" href="#about">DISCOVER CORTIS ↓</a>
+  <div class="hero-content">
+    <div class="tag">The young creator crew</div>
+
+    <h1>COLOR<br>OUTSIDE<br><span>THE LINES.</span></h1>
+
+    <p>
+      Meet CORTIS — a five-member group bringing together
+      music, choreography, visual creativity and their own ideas.
+      They believe in creating beyond the boundaries.
+    </p>
+
+    <a href="#about" class="button">DISCOVER CORTIS ↗</a>
+  </div>
 </div>
+
+<!-- ABOUT -->
 
 <section id="about">
-<div class="number">01 / ABOUT THE GROUP</div>
-<h2>Think beyond<br>the limits.</h2>
-<div class="about">
-<div>
-<p>CORTIS is a five-member group from BIGHIT MUSIC.</p>
-<p>The name CORTIS comes from six letters selected from the phrase "COLOR OUTSIDE THE LINES".</p>
-<p>It represents freedom, originality and the courage to think differently.</p>
-</div>
-<div class="facts">
-<div class="fact"><span>Agency</span><strong>BIGHIT MUSIC</strong></div>
-<div class="fact"><span>Members</span><strong>5</strong></div>
-<div class="fact"><span>Debut</span><strong>August 2025</strong></div>
-<div class="fact"><span>Identity</span><strong>Creative crew</strong></div>
-</div>
-</div>
+  <div class="section-label">01 / Introduction</div>
+  <h2>WHO ARE<br>CORTIS?</h2>
+
+  <div class="intro-grid">
+    <div class="intro-text">
+      <p>
+        <span class="highlight">CORTIS</span> is a five-member
+        South Korean boy group under BIGHIT MUSIC, a label
+        within HYBE.
+      </p>
+
+      <br>
+
+      <p>
+        The group consists of MARTIN, JAMES, JUHOON,
+        SEONGHYEON and KEONHO.
+      </p>
+
+      <br>
+
+      <p>
+        Their name is created from six letters taken from
+        the phrase <span class="highlight">"COLOR OUTSIDE THE LINES."</span>
+        It represents the idea of thinking freely and not
+        being limited by the rules and expectations of the world.
+      </p>
+
+      <br>
+
+      <p>
+        CORTIS is known as a creative crew. The members
+        participate in different parts of their artistic work,
+        including songwriting, composition, choreography
+        and video production.
+      </p>
+    </div>
+
+    <div class="fact-box">
+      <div>
+        <small>GROUP NAME</small>
+        <strong>CORTIS (코르티스)</strong>
+      </div>
+
+      <div>
+        <small>MEMBERS</small>
+        <strong>5 Members</strong>
+      </div>
+
+      <div>
+        <small>AGENCY</small>
+        <strong>BIGHIT MUSIC</strong>
+      </div>
+
+      <div>
+        <small>PARENT COMPANY</small>
+        <strong>HYBE</strong>
+      </div>
+
+      <div>
+        <small>FANDOM NAME</small>
+        <strong>COER</strong>
+      </div>
+
+      <div>
+        <small>CREATIVE IDENTITY</small>
+        <strong>Young Creator Crew</strong>
+      </div>
+    </div>
+  </div>
 </section>
+
+<!-- HISTORY -->
+
+<section id="history">
+  <div class="section-label">02 / Group history</div>
+  <h2>THE BEGINNING<br>OF CORTIS.</h2>
+
+  <p class="intro-text">
+    CORTIS began its journey in 2025 under BIGHIT MUSIC.
+    Their debut introduced a new creative direction built
+    around music, performance and visual storytelling.
+  </p>
+
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <div class="timeline-date">AUGUST 18, 2025</div>
+      <h3>Official Debut</h3>
+      <p>
+        CORTIS officially debuted with the lead single
+        "What You Want".
+      </p>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-date">SEPTEMBER 8, 2025</div>
+      <h3>First EP — COLOR OUTSIDE THE LINES</h3>
+      <p>
+        Their first EP was released with five tracks:
+        GO!, What You Want, FaSHioN, JoyRide and Lullaby.
+      </p>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-date">THEIR CREATIVE APPROACH</div>
+      <h3>More Than Performers</h3>
+      <p>
+        The members take part in creative processes such as
+        songwriting, composition, choreography and video work.
+      </p>
+    </div>
+
+  </div>
+
+  <a class="button"
+     href="https://ibighit.com/en/cortis/discography/detail/color-outside-the-lines"
+     target="_blank">
+     OFFICIAL DEBUT ALBUM ↗
+  </a>
+</section>
+
+<!-- MEMBERS -->
 
 <section id="members">
-<div class="number">02 / THE MEMBERS</div>
-<h2>Meet the crew.</h2>
-<div class="members">
-<div class="member"><div class="initial">M</div><strong>MARTIN</strong></div>
-<div class="member"><div class="initial">J</div><strong>JAMES</strong></div>
-<div class="member"><div class="initial">J</div><strong>JUHOON</strong></div>
-<div class="member"><div class="initial">S</div><strong>SEONGHYEON</strong></div>
-<div class="member"><div class="initial">K</div><strong>KEONHO</strong></div>
-</div>
+  <div class="section-label">03 / Meet the members</div>
+  <h2>FIVE MEMBERS.<br>ONE CREW.</h2>
+
+  <p class="intro-text">
+    Get to know the five members of CORTIS.
+    Tap on each name to discover more information.
+  </p>
+
+  <div class="member-grid">
+
+    <details class="member">
+      <summary>
+        <div class="member-top">
+          <span class="member-number">01 / MEMBER</span>
+          <span class="plus">+</span>
+        </div>
+        <h3>MARTIN</h3>
+        <div class="member-subtitle">Leader of CORTIS</div>
+      </summary>
+
+      <div class="member-info">
+        <p><strong>Birthday:</strong> March 20, 2008</p>
+        <p><strong>Group role:</strong> Leader</p>
+        <p>
+          Martin is the leader of CORTIS. He is also part of
+          the group's collaborative creative work.
+        </p>
+      </div>
+    </details>
+
+    <details class="member">
+      <summary>
+        <div class="member-top">
+          <span class="member-number">02 / MEMBER</span>
+          <span class="plus">+</span>
+        </div>
+        <h3>JAMES</h3>
+        <div class="member-subtitle">Member of CORTIS</div>
+      </summary>
+
+      <div class="member-info">
+        <p><strong>Birthday:</strong> October 14, 2005</p>
+        <p><strong>Group role:</strong> Member</p>
+        <p>
+          James is one of the five members of CORTIS.
+          He participates in the group's shared artistic work.
+        </p>
+      </div>
+    </details>
+
+    <details class="member">
+      <summary>
+        <div class="member-top">
+          <span class="member-number">03 / MEMBER</span>
+          <span class="plus">+</span>
+        </div>
+        <h3>JUHOON</h3>
+        <div class="member-subtitle">Member of CORTIS</div>
+      </summary>
+
+      <div class="member-info">
+        <p><strong>Birthday:</strong> January 3, 2008</p>
+        <p><strong>Group role:</strong> Member</p>
+        <p>
+          Juhoon is part of CORTIS and contributes to the
+          group's collaborative creative identity.
+        </p>
+      </div>
+    </details>
+
+    <details class="member">
+      <summary>
+        <div class="member-top">
+          <span class="member-number">04 / MEMBER</span>
+          <span class="plus">+</span>
+        </div>
+        <h3>SEONGHYEON</h3>
+        <div class="member-subtitle">Member of CORTIS</div>
+      </summary>
+
+      <div class="member-info">
+        <p><strong>Birthday:</strong> January 13, 2009</p>
+        <p><strong>Group role:</strong> Member</p>
+        <p>
+          Seonghyeon is one of the five members and takes
+          part in the group's creative activities.
+        </p>
+      </div>
+    </details>
+
+    <details class="member">
+      <summary>
+        <div class="member-top">
+          <span class="member-number">05 / MEMBER</span>
+          <span class="plus">+</span>
+        </div>
+        <h3>KEONHO</h3>
+        <div class="member-subtitle">Member of CORTIS</div>
+      </summary>
+
+      <div class="member-info">
+        <p><strong>Birthday:</strong> February 14, 2009</p>
+        <p><strong>Group role:</strong> Member</p>
+        <p>
+          Keonho is the youngest member of CORTIS.
+          He is part of the group's shared creative work.
+        </p>
+      </div>
+    </details>
+
+  </div>
+
+  <p class="note">
+    Note: Birth dates and the leader information are based on
+    official artist profile and community information.
+    The group does not use fixed individual creative positions
+    in its official introduction.
+  </p>
+
+  <a class="button"
+     href="https://ibighit.com/en/cortis/profile/"
+     target="_blank">
+     OFFICIAL MEMBER PROFILES ↗
+  </a>
 </section>
+
+<!-- MUSIC -->
 
 <section id="music">
-<div class="number">03 / THEIR MUSIC</div>
-<h2>Listen to CORTIS.</h2>
-<div class="music">
-<div class="track"><small>TRACK 01</small><h3>GO!</h3><p>A powerful introduction to the group.</p><a href="https://www.youtube.com/results?search_query=CORTIS+GO+official">Listen ↗</a></div>
-<div class="track"><small>TRACK 02</small><h3>What You Want</h3><p>The title track from their debut EP.</p><a href="https://www.youtube.com/results?search_query=CORTIS+What+You+Want">Listen ↗</a></div>
-<div class="track"><small>TRACK 03</small><h3>FaSHioN</h3><p>A track from their debut EP.</p><a href="https://www.youtube.com/results?search_query=CORTIS+FaSHioN">Listen ↗</a></div>
-</div>
+  <div class="section-label">04 / Music & releases</div>
+  <h2>LISTEN TO<br>CORTIS.</h2>
+
+  <p class="intro-text">
+    Explore the music of CORTIS through official releases
+    and music videos.
+  </p>
+
+  <div class="music-grid">
+
+    <div class="music-card">
+      <div class="number">01 / DEBUT SINGLE</div>
+      <h3>What You Want</h3>
+      <p>
+        The lead single that introduced CORTIS to the world.
+        Released August 18, 2025.
+      </p>
+      <a class="music-link"
+         href="https://www.youtube.com/@cortis_bighit"
+         target="_blank">
+         OFFICIAL YOUTUBE ↗
+      </a>
+    </div>
+
+    <div class="music-card">
+      <div class="number">02 / FIRST EP</div>
+      <h3>COLOR OUTSIDE THE LINES</h3>
+      <p>
+        Their debut EP, released September 8, 2025.
+      </p>
+      <a class="music-link"
+         href="https://ibighit.com/en/cortis/discography/detail/color-outside-the-lines"
+         target="_blank">
+         EXPLORE THE ALBUM ↗
+      </a>
+    </div>
+
+    <div class="music-card">
+      <div class="number">03 / MUSIC VIDEO</div>
+      <h3>FaSHioN</h3>
+      <p>
+        An official music video from their first EP.
+      </p>
+      <a class="music-link"
+         href="https://www.youtube.com/watch?v=42wfEs7oIP8"
+         target="_blank">
+         WATCH OFFICIAL VIDEO ↗
+      </a>
+    </div>
+
+    <div class="music-card">
+      <div class="number">04 / OFFICIAL CHANNEL</div>
+      <h3>More Music & Videos</h3>
+      <p>
+        Discover more songs, performances and visual content
+        on the official CORTIS channel.
+      </p>
+      <a class="music-link"
+         href="https://www.youtube.com/@cortis_bighit"
+         target="_blank">
+         VISIT CHANNEL ↗
+      </a>
+    </div>
+
+  </div>
+
+  <p class="note">
+    All music and videos are linked to official CORTIS
+    or BIGHIT MUSIC platforms.
+  </p>
 </section>
 
-<div class="contact" id="contact">
-<div class="number" style="color:#34420d">04 / OFFICIAL LINKS</div>
-<h2>Stay connected.</h2>
-<p>Explore the official CORTIS profile and discover more about the group.</p>
-<a href="https://ibighit.com/en/cortis/profile/" target="_blank">OFFICIAL PROFILE ↗</a>
-</div>
+<!-- COPYRIGHT -->
+
+<section id="credits">
+  <div class="section-label">05 / Credits & copyright</div>
+  <h2>RESPECT THE<br>CREATORS.</h2>
+
+  <div class="credits">
+
+    <p>
+      <strong>About this website</strong><br>
+      This is an unofficial, non-commercial fan-made
+      website created for educational and informational purposes.
+      It is not affiliated with, sponsored by or endorsed by
+      CORTIS, BIGHIT MUSIC or HYBE.
+    </p>
+
+    <p>
+      <strong>Group and trademarks</strong><br>
+      CORTIS, its name, logos and related trademarks belong
+      to their respective rights holders.
+    </p>
+
+    <p>
+      <strong>Photography</strong><br>
+      The group photograph displayed on this website is sourced
+      from CORTIS media on Weverse. The photograph is not owned
+      by the website creator. Copyright and usage rights remain
+      with the respective photographer and rights holders.
+    </p>
+
+    <p>
+      <strong>Music and videos</strong><br>
+      All songs, music videos, recordings and video content
+      belong to their respective copyright owners, including
+      the relevant artists, producers and rights holders.
+      Links are provided to official platforms.
+    </p>
+
+    <p>
+      <strong>Credits and sources</strong><br>
+      Official artist profile:
+      <a href="https://ibighit.com/en/cortis/profile/"
+         target="_blank">BIGHIT MUSIC</a>
+      <br>
+
+      Official music releases:
+      <a href="https://ibighit.com/en/cortis/discography/"
+         target="_blank">CORTIS Discography</a>
+      <br>
+
+      Official community:
+      <a href="https://weverse.io/cortis"
+         target="_blank">CORTIS on Weverse</a>
+      <br>
+
+      Group photograph:
+      <a href="https://weverse.io/cortis/media"
+         target="_blank">CORTIS Media on Weverse</a>
+    </p>
+
+    <p>
+      <strong>Copyright notice</strong><br>
+      No ownership of third-party photographs, music,
+      videos or trademarks is claimed by this fan project.
+      If any rights holder has a concern about the use
+      of material, please contact the website creator.
+    </p>
+
+  </div>
+</section>
+
 </main>
 
 <footer>
-<p>CORTIS FAN WEBSITE · STUDENT PROJECT · 2026</p>
-<p>Information: BIGHIT MUSIC official website.</p>
+  <div class="footer-logo">COR<span>TIS</span></div>
+
+  <p>COLOR OUTSIDE THE LINES.</p>
+  <p>Unofficial CORTIS Fan Website</p>
+
+  <br>
+
+  <p>Created by <strong>Danilbekova Malika</strong></p>
+  <p>Student Project · 2026</p>
+
+  <br>
+
+  <p>All rights belong to their respective owners.</p>
 </footer>
+
 </body>
 </html>
